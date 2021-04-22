@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+   
     public int maxHealth = 100;
-    public int currentHealth;
+    public int currentHealth = 100;
+
+    public GameObject mainPlayer;
 
     public HealthBar healthbar;
 
@@ -27,7 +30,7 @@ public class Player : MonoBehaviour
 
     }
 
-    void TakeDmg(int dmg)
+    public void TakeDmg(int dmg)
     {
         currentHealth -= dmg;
 
