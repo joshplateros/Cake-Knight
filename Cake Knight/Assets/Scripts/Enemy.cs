@@ -11,14 +11,18 @@ public class Enemy : MonoBehaviour
     public int maxHealth = 100;
     int currentHealth;
 
+    public HealthBar healthbar;
+
     void Start()
     {
         currentHealth = maxHealth;
+        healthbar.SetMaxHealth(currentHealth);
     }
     public void TakeDamage(int damage) {
         currentHealth -= damage;
 
         animator.SetTrigger("Take Damage");
+        healthbar.SetHealth(currentHealth);
 
         if (currentHealth <= 0) {
             Die();
