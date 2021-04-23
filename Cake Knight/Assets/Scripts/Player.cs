@@ -33,7 +33,6 @@ public class Player : MonoBehaviour
     public void TakeDmg(int dmg)
     {
         currentHealth -= dmg;
-
         healthbar.SetHealth(currentHealth);
     }
 }
