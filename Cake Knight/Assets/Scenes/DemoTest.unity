@@ -1836,8 +1836,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 235390228}
   attackPoint: {fileID: 215411849}
+  m_rigidbody: {fileID: 235390227}
   attackRange: 0.5
-  attackDamage: 40
+  attackDamage: 20
   enemyLayers:
     serializedVersion: 2
     m_Bits: 512
@@ -1857,6 +1858,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 100
   mainPlayer: {fileID: 235390223}
+  animator: {fileID: 235390228}
+  m_rigidbody: {fileID: 235390227}
   healthbar: {fileID: 1794693887}
 --- !u!1 &237552368
 GameObject:
@@ -3914,9 +3917,9 @@ MonoBehaviour:
     m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 2
   sightRange: 5
-  attackRange: 2
+  attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!65 &478287074
@@ -9368,6 +9371,8 @@ MonoBehaviour:
   maxHealth: 100
   currentHealth: 20
   mainPlayer: {fileID: 0}
+  animator: {fileID: 0}
+  m_rigidbody: {fileID: 0}
   healthbar: {fileID: 1794693887}
 --- !u!1 &1104725357
 GameObject:
@@ -10299,9 +10304,9 @@ MonoBehaviour:
     m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 2
   sightRange: 5
-  attackRange: 2
+  attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!1001 &1213175094
@@ -11963,9 +11968,9 @@ MonoBehaviour:
     m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 10
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 2
   sightRange: 3
-  attackRange: 2
+  attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!195 &1394478505
@@ -17473,9 +17478,9 @@ MonoBehaviour:
     m_Bits: 2048
   walkPoint: {x: 0, y: 0, z: 0}
   walkPointRange: 5
-  timeBetweenAttacks: 1
+  timeBetweenAttacks: 2
   sightRange: 5
-  attackRange: 2
+  attackRange: 1
   playerInSightRange: 0
   playerInAttackRange: 0
 --- !u!1001 &2139236995
