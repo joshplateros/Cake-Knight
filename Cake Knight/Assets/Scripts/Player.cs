@@ -44,6 +44,8 @@ public class Player : MonoBehaviour
         GetComponent<PlayerCombat>().enabled = false;
 
         m_rigidbody.velocity = Vector3.zero;
+        DeathMenuManager.inst.playerDead = true;
+
         this.enabled = false;
 
         // Have restart button here

@@ -5,6 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class DeathMenuManager : MonoBehaviour
 {
+
+    public static DeathMenuManager inst;
+    private void Awake() {
+        inst = this;
+    }
+
     public static bool isPlayerDead = false; // TO PREVENT PAUSE MENU USE
 
     public GameObject deathMenuUi;
