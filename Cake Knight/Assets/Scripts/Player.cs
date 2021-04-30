@@ -5,7 +5,11 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Player : MonoBehaviour
 {
-   
+    public static Player inst;
+    private void Awake() {
+        inst = this;
+    }
+
     public int maxHealth = 100;
     public int currentHealth = 100;
 
@@ -54,8 +58,6 @@ public class Player : MonoBehaviour
         DeathMenuManager.inst.playerDead = true;
 
         this.enabled = false;
-
-        // Have restart button here
                 
     }
     public void TakeDmg(int dmg)
@@ -67,4 +69,10 @@ public class Player : MonoBehaviour
         currentHealth -= dmg;
         healthbar.SetHealth(currentHealth);
     }
-}
+
+    public void AddHealth(int health) {
+        currentHealth += health;
+        healthbar.SetHealth(currentHealth);
+    }
+
+ }
