@@ -65,4 +65,11 @@ public class Player : MonoBehaviour
         currentHealth = currentHealth + health;
         healthbar.SetHealth(currentHealth);
     }
+
+    public void ObstacleTrap(int dmg)
+    {
+        currentHealth = currentHealth - dmg;
+        healthbar.SetHealth(currentHealth);
+        Die();
+    }
 }
