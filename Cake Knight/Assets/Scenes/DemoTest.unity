@@ -1450,7 +1450,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &182242472
 Transform:
   m_ObjectHideFlags: 0
@@ -7370,7 +7370,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -37.699997}
-  m_SizeDelta: {x: 255.3, y: 68.6}
+  m_SizeDelta: {x: 255.29999, y: 68.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &822123159
 MonoBehaviour:
@@ -8475,6 +8475,192 @@ Transform:
   m_Father: {fileID: 856746747}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &934482298
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 934482299}
+  - component: {fileID: 934482300}
+  m_Layer: 0
+  m_Name: PlayerAudioMgr
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &934482299
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934482298}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 996597278}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &934482300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934482298}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc615198bc28944781b602f1c8d3908, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: Player Death
+    clip: {fileID: 8300000, guid: c2e7b8711ae948440b1c77036b1e951c, type: 3}
+    pitch: 1
+    volume: 0.4
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: SwordAir
+    clip: {fileID: 8300000, guid: 6c4a940d95d969243a3bada498ad26bc, type: 3}
+    pitch: 1
+    volume: 0.3
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: SwordHit1
+    clip: {fileID: 8300000, guid: e17ae688764358e48bccdf405aa3d936, type: 3}
+    pitch: 1
+    volume: 0.25
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: SwordHit2
+    clip: {fileID: 8300000, guid: a56fe9feb0194a74db6cd2ddac83e286, type: 3}
+    pitch: 1
+    volume: 0.15
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: SwordAir2
+    clip: {fileID: 8300000, guid: 6ebca5518d4325340b1de63012a6db3d, type: 3}
+    pitch: 1
+    volume: 0.25
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Battlecry
+    clip: {fileID: 8300000, guid: 3a7e3e74ffcaa8944b535dee8392bf0a, type: 3}
+    pitch: 1
+    volume: 0.3
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: SwordCrash
+    clip: {fileID: 8300000, guid: b40af2b42d2e79e4d95fe31d6cbfb2b1, type: 3}
+    pitch: 1
+    volume: 0.35
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Run1
+    clip: {fileID: 8300000, guid: 42e65e088b3f4374e851b8dbd38f3df9, type: 3}
+    pitch: 1
+    volume: 0.1
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Run2
+    clip: {fileID: 8300000, guid: 8bc94ec6ed537e743b481638bdcd503d, type: 3}
+    pitch: 1
+    volume: 0.1
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Jump
+    clip: {fileID: 8300000, guid: f4998dd112aa8da4aa95a8cc6c651409, type: 3}
+    pitch: 1
+    volume: 0.1
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: JumpLand
+    clip: {fileID: 8300000, guid: 65204e389d214de44922eac812c2a387, type: 3}
+    pitch: 1
+    volume: 0.1
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Roll
+    clip: {fileID: 8300000, guid: f36a7ff8cf7124d4e9a82db6b5aa7984, type: 3}
+    pitch: 1
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  hurtSounds:
+  - name: Hurt1
+    clip: {fileID: 8300000, guid: 2381ed4066a043244ad75de797e4df66, type: 3}
+    pitch: 1
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Hurt2
+    clip: {fileID: 8300000, guid: 92974800c132caa419957877aaf82d5b, type: 3}
+    pitch: 1
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Hurt3
+    clip: {fileID: 8300000, guid: 90db05e50bce4744f9cdfd545b4e7517, type: 3}
+    pitch: 1
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Hurt4
+    clip: {fileID: 8300000, guid: 53959c521703b2a40b36599409cb7d21, type: 3}
+    pitch: 1
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  - name: Hurt5
+    clip: {fileID: 8300000, guid: 63649f07b56d3e64f835afc3082a5b78, type: 3}
+    pitch: 1
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 0
+  - name: Hurt6
+    clip: {fileID: 8300000, guid: 75d2092cccac08447ac30278c20144a1, type: 3}
+    pitch: 1
+    volume: 0.2
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 1
+  BGM:
+  - name: Death Music
+    clip: {fileID: 8300000, guid: e2969a7ee1a312945a1a5de4d9424ed9, type: 3}
+    pitch: 1
+    volume: 1.15
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 0
+  - name: Level1 BG Music
+    clip: {fileID: 8300000, guid: 582ddb38737a9ed4bbcc9d6e700affec, type: 3}
+    pitch: 1
+    volume: 0.113
+    loop: 0
+    source: {fileID: 0}
+    spatialBlend: 0
 --- !u!1001 &935079858
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9432,6 +9618,7 @@ Transform:
   - {fileID: 1047038605}
   - {fileID: 1102590553}
   - {fileID: 1336497576}
+  - {fileID: 934482299}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

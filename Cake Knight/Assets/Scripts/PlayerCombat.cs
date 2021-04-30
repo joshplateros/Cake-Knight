@@ -48,26 +48,55 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Roll() {
+        FindObjectOfType<PlayerAudioMgr>().Play("Roll");
         animator.SetTrigger("Roll");
     }
 
-    void Attack() {
-        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
-            animator.SetTrigger("Attack 2");
-        } else if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack 2")) {
-            animator.SetTrigger("Attack 3");
-        } else {
-            animator.SetTrigger("Attack");
+    // Used to play Battlecry when doing final attack
+    // This is so it won't play everytime user does this attack
+    void BattleCryRand() {
+        int num = Random.Range(0, 10);
+
+        if (num < 3) {
+           FindObjectOfType<PlayerAudioMgr>().Play("Battlecry");
         }
 
 
-       
+    }
+
+    void Attack() {
+ 
+
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
+            if (CheckIfEnemies() == false) {
+                FindObjectOfType<PlayerAudioMgr>().Play("SwordAir2");
+            }
+           animator.SetTrigger("Attack 2");
+        } else if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack 2")) {
+
+            BattleCryRand();
+            FindObjectOfType<PlayerAudioMgr>().Play("SwordCrash");
+
+           animator.SetTrigger("Attack 3");
+        } else {
+            if (CheckIfEnemies() == false) {
+                FindObjectOfType<PlayerAudioMgr>().Play("SwordAir");
+            }
+            animator.SetTrigger("Attack");
+        }
+    }
+
+    bool CheckIfEnemies() {
+        Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
+        if (hitEnemies.Length == 0) {
+            return false;
+        }
+        return true;
     }
 
     void DealDamage(int addedDmg) {
         // Detect enemies in range
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
-
         // Damage them
         foreach(Collider enemy in hitEnemies) {
             enemy.GetComponent<EnemyBehavior>().TakeDamage(attackDamage + addedDmg);
@@ -76,10 +105,18 @@ public class PlayerCombat : MonoBehaviour
     
     // Special functions to sync animation with attack
     void Attack1() {
+
+        // Play hit noise against mob here
+        if (CheckIfEnemies() == true) {
+            FindObjectOfType<PlayerAudioMgr>().Play("SwordHit1");
+        }
         DealDamage(0);
     }
 
     void Attack2() {
+        if (CheckIfEnemies() == true) {
+            FindObjectOfType<PlayerAudioMgr>().Play("SwordHit2");
+        }
         DealDamage(0);
     }
     void Attack3() {
