@@ -5,7 +5,12 @@ using UnityStandardAssets.Characters.ThirdPerson;
 
 public class Player : MonoBehaviour
 {
-   
+    public static Player inst;
+    private void Awake()
+    {
+        inst = this;
+    }
+
     public int maxHealth = 100;
     public int currentHealth = 100;
 
@@ -35,7 +40,7 @@ public class Player : MonoBehaviour
         }
 
     }
-    public void Die() {
+    void Die() {
         animator.SetTrigger("Die");
 
         // Deactivating all scripts when character is dead
@@ -52,6 +57,12 @@ public class Player : MonoBehaviour
     public void TakeDmg(int dmg)
     {
         currentHealth -= dmg;
+        healthbar.SetHealth(currentHealth);
+    }
+
+    public void AddHealth(int health)
+    {
+        currentHealth = currentHealth + health;
         healthbar.SetHealth(currentHealth);
     }
 }
