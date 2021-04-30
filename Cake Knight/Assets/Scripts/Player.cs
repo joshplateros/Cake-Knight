@@ -35,7 +35,7 @@ public class Player : MonoBehaviour
         }
 
     }
-    void Die() {
+    public void Die() {
         animator.SetTrigger("Die");
 
         // Deactivating all scripts when character is dead
