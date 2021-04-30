@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(currentHealth);
-       
+        FindObjectOfType<PlayerAudioMgr>().PlayBGM("Level1 BG Music");
     }
 
     // Update is called once per frame
@@ -44,6 +44,13 @@ public class Player : MonoBehaviour
         GetComponent<PlayerCombat>().enabled = false;
 
         m_rigidbody.velocity = Vector3.zero;
+
+        // Death noise
+        FindObjectOfType<PlayerAudioMgr>().StopBGM("Level1 BG Music");
+        FindObjectOfType<PlayerAudioMgr>().Play("Player Death");
+        FindObjectOfType<PlayerAudioMgr>().PlayBGM("Death Music");
+
+        // Death menu
         DeathMenuManager.inst.playerDead = true;
 
         this.enabled = false;
@@ -53,6 +60,10 @@ public class Player : MonoBehaviour
     }
     public void TakeDmg(int dmg)
     {
+        // Play random damage noise
+        if (currentHealth > 0) {
+            FindObjectOfType<PlayerAudioMgr>().PlayDmg();
+        }
         currentHealth -= dmg;
         healthbar.SetHealth(currentHealth);
     }
