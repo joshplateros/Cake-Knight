@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(currentHealth);
-        FindObjectOfType<PlayerAudioMgr>().PlayBGM("Level1 BG Music");
+        FindObjectOfType<AudioMgr>().PlayBGM("Level1 BG Music");
     }
 
     // Update is called once per frame
@@ -50,9 +50,9 @@ public class Player : MonoBehaviour
         m_rigidbody.velocity = Vector3.zero;
 
         // Death noise
-        FindObjectOfType<PlayerAudioMgr>().StopBGM("Level1 BG Music");
-        FindObjectOfType<PlayerAudioMgr>().Play("Player Death");
-        FindObjectOfType<PlayerAudioMgr>().PlayBGM("Death Music");
+        FindObjectOfType<AudioMgr>().StopBGM("Level1 BG Music");
+        FindObjectOfType<AudioMgr>().Play("Player Death");
+        FindObjectOfType<AudioMgr>().PlayBGM("Death Music");
 
         // Death menu
         DeathMenuManager.inst.playerDead = true;
@@ -64,7 +64,7 @@ public class Player : MonoBehaviour
     {
         // Play random damage noise
         if (currentHealth > 0) {
-            FindObjectOfType<PlayerAudioMgr>().PlayDmg();
+            FindObjectOfType<AudioMgr>().PlayDmg();
         }
         currentHealth -= dmg;
         healthbar.SetHealth(currentHealth);

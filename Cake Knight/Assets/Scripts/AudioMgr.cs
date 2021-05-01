@@ -3,7 +3,7 @@ using UnityEngine.Audio;
 using System;
 
 
-public class PlayerAudioMgr : MonoBehaviour
+public class AudioMgr : MonoBehaviour
 {
 
     public Sound[] sounds;
@@ -46,7 +46,7 @@ public class PlayerAudioMgr : MonoBehaviour
         
         // Special delay for sword crash
         if (name == "SwordCrash") {
-            s.source.PlayDelayed(0.5f);
+            s.source.PlayDelayed(0.9f);
         
         // Play other sounds normally
         } else {
