@@ -9203,7 +9203,7 @@ MonoBehaviour:
     source: {fileID: 0}
     spatialBlend: 1
   - name: SwordCrash
-    clip: {fileID: 8300000, guid: b40af2b42d2e79e4d95fe31d6cbfb2b1, type: 3}
+    clip: {fileID: 8300000, guid: 66eff77edc891064197bc3d3f875dc29, type: 3}
     pitch: 1
     volume: 0.35
     loop: 0

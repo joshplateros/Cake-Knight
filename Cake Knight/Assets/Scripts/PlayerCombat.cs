@@ -48,7 +48,7 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Roll() {
-        FindObjectOfType<PlayerAudioMgr>().Play("Roll");
+        FindObjectOfType<AudioMgr>().Play("Roll");
         animator.SetTrigger("Roll");
     }
 
@@ -58,7 +58,7 @@ public class PlayerCombat : MonoBehaviour
         int num = Random.Range(0, 10);
 
         if (num < 3) {
-           FindObjectOfType<PlayerAudioMgr>().Play("Battlecry");
+           FindObjectOfType<AudioMgr>().Play("Battlecry");
         }
 
 
@@ -69,18 +69,18 @@ public class PlayerCombat : MonoBehaviour
 
         if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
             if (CheckIfEnemies() == false) {
-                FindObjectOfType<PlayerAudioMgr>().Play("SwordAir2");
+                FindObjectOfType<AudioMgr>().Play("SwordAir2");
             }
            animator.SetTrigger("Attack 2");
         } else if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack 2")) {
 
             BattleCryRand();
-            FindObjectOfType<PlayerAudioMgr>().Play("SwordCrash");
+            FindObjectOfType<AudioMgr>().Play("SwordCrash");
 
            animator.SetTrigger("Attack 3");
         } else {
             if (CheckIfEnemies() == false) {
-                FindObjectOfType<PlayerAudioMgr>().Play("SwordAir");
+                FindObjectOfType<AudioMgr>().Play("SwordAir");
             }
             animator.SetTrigger("Attack");
         }
@@ -108,14 +108,14 @@ public class PlayerCombat : MonoBehaviour
 
         // Play hit noise against mob here
         if (CheckIfEnemies() == true) {
-            FindObjectOfType<PlayerAudioMgr>().Play("SwordHit1");
+            FindObjectOfType<AudioMgr>().Play("SwordHit1");
         }
         DealDamage(0);
     }
 
     void Attack2() {
         if (CheckIfEnemies() == true) {
-            FindObjectOfType<PlayerAudioMgr>().Play("SwordHit2");
+            FindObjectOfType<AudioMgr>().Play("SwordHit2");
         }
         DealDamage(0);
     }

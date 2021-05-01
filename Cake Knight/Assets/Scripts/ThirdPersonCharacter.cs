@@ -169,7 +169,7 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 			if (jump && !crouch && m_Animator.GetCurrentAnimatorStateInfo(0).IsName("Grounded"))
 			{
 				// jump!
-				FindObjectOfType<PlayerAudioMgr>().Play("Jump");
+				FindObjectOfType<AudioMgr>().Play("Jump");
 				m_Rigidbody.velocity = new Vector3(m_Rigidbody.velocity.x, m_JumpPower, m_Rigidbody.velocity.z);
 				m_IsGrounded = false;
 				m_Animator.applyRootMotion = false;
@@ -225,19 +225,19 @@ namespace UnityStandardAssets.Characters.ThirdPerson
 	
 		// RUNNING SOUNDS
 		void Run1() {
-			FindObjectOfType<PlayerAudioMgr>().Play("Run1");
+			FindObjectOfType<AudioMgr>().Play("Run1");
         }
 
 		void Run2() {
-			FindObjectOfType<PlayerAudioMgr>().Play("Run2");
+			FindObjectOfType<AudioMgr>().Play("Run2");
         }
 
 		void Jump() {
-			FindObjectOfType<PlayerAudioMgr>().Play("Jump");
+			FindObjectOfType<AudioMgr>().Play("Jump");
         }
 
 		void Land() {
-			FindObjectOfType<PlayerAudioMgr>().Play("JumpLand");
+			FindObjectOfType<AudioMgr>().Play("JumpLand");
         }
 
 	}
