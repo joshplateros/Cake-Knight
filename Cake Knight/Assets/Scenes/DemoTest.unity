@@ -18673,6 +18673,18 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.09120325
   m_Center: {x: 0, y: -0.007497867, z: -0.009704232}
+--- !u!122 &1927021556
+Halo:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927021552}
+  m_Enabled: 1
+  m_Color:
+    serializedVersion: 2
+    rgba: 4286611584
+  m_Size: 0.5
 --- !u!1 &1928998532
 GameObject:
   m_ObjectHideFlags: 0
