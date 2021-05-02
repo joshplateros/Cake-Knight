@@ -99,6 +99,9 @@ public class PlayerCombat : MonoBehaviour
         Collider[] hitEnemies = Physics.OverlapSphere(attackPoint.position, attackRange, enemyLayers);
         // Damage them
         foreach(Collider enemy in hitEnemies) {
+            if (enemy.name == "Bull")
+                enemy.GetComponent<BossBehavior>().TakeDamage(attackDamage + addedDmg);
+            else
             enemy.GetComponent<EnemyBehavior>().TakeDamage(attackDamage + addedDmg);
         }
     }

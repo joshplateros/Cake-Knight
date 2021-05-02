@@ -2,6 +2,10 @@
 
 public class CameraFollowNew : MonoBehaviour
 {
+    public static CameraFollowNew inst;
+    private void Awake() {
+        inst = this;
+    }
     public Transform target;
 
     public float smoothSpeed = 0.125f;
