@@ -1,34 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@BradyWilder 
-joshplateros
-/
-Cake-Knight
-1
-00
-Code
-Issues
-Pull requests
-Actions
-Projects
-Wiki
-Security
-Insights
-Cake-Knight/Cake Knight/Assets/Scenes/Level2.unity
-@BradyWilder
-BradyWilder Level 2 Base Structure
-Latest commit 39e0026 14 minutes ago
- History
- 2 contributors
-@atozc@BradyWilder
-10690 lines (10690 sloc)  383 KB
-  
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
 --- !u!29 &1
@@ -10719,16 +10688,3 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
-© 2021 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Docs
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
-Loading complete
