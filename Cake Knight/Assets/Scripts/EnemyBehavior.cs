@@ -125,6 +125,10 @@ public class EnemyBehavior : MonoBehaviour
             /// https://www.youtube.com/watch?v=UjkSFoLxesw
             /// 
             dealDamageToPlayer();
+
+            alreadyAttacked = true;
+            Invoke(nameof(ResetAttack), timeBetweenAttacks);
+
         }
 
     }
@@ -138,8 +142,8 @@ public class EnemyBehavior : MonoBehaviour
             player.GetComponent<Player>().TakeDmg(enemyDamage);
         }
 
-        alreadyAttacked = true;
-        Invoke(nameof(ResetAttack), timeBetweenAttacks);
+
+
     }
     // Might implement something here
     private void ResetAttack() {
