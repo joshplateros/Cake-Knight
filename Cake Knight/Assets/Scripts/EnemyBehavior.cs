@@ -40,6 +40,8 @@ public class EnemyBehavior : MonoBehaviour
     }
 
     public void TakeDamage(int damage) {
+
+        StartCoroutine(ColorDamage());
         currentHealth -= damage;
 
         animator.SetTrigger("Take Damage");
@@ -49,6 +51,18 @@ public class EnemyBehavior : MonoBehaviour
             Die();
         }
     }
+
+    IEnumerator ColorDamage() {
+
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = new Color(0.70f, 0, 0, 1);
+
+        yield return new WaitForSeconds(0.5f);
+
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = new Color(1f, 1f, 1f, 1);
+
+
+    }
+
 
     void Die() {
         animator.SetBool("isDead", true);

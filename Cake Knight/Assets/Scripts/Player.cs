@@ -63,13 +63,23 @@ public class Player : MonoBehaviour
     public void TakeDmg(int dmg)
     {
         // Play random damage noise
+        StartCoroutine(ColorDamage());
         if (currentHealth > 0) {
             FindObjectOfType<AudioMgr>().PlayDmg();
         }
         currentHealth -= dmg;
         healthbar.SetHealth(currentHealth);
     }
+    IEnumerator ColorDamage() {
 
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = new Color(0.78f, 0, 0, 1);
+
+        yield return new WaitForSeconds(0.5f);
+
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = new Color(1f, 1f, 1f, 1);
+
+
+    }
     public void AddHealth(int health) {
         currentHealth += health;
         healthbar.SetHealth(currentHealth);
