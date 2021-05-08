@@ -69,6 +69,9 @@ public class EnemyBehavior : MonoBehaviour
         // animator.SetTrigger("Die");
         GetComponent<Collider>().enabled = false;
 
+        // Death noise
+        FindObjectOfType<AudioMgr>().Play("Mob Death");
+
         // Set script to off once enemey is dead
         this.enabled = false;
     }
@@ -151,6 +154,8 @@ public class EnemyBehavior : MonoBehaviour
         Collider[] thePlayer = Physics.OverlapSphere(enemyAttackPoint.position, attackRange, whatIsPlayer);
         
         animator.SetTrigger("Attack 01");
+        // Attack Noise 
+        FindObjectOfType<AudioMgr>().PlayMob("Mob Attack");
         // Damage player (Didn't need to be a list but using previous tutorial only used list (can't just use player object)))
         foreach(Collider player in thePlayer) {
             player.GetComponent<Player>().TakeDmg(enemyDamage);

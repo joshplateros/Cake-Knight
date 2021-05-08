@@ -2540,7 +2540,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Crystal Atoz - Platform Physics, Health Items, Traps, Level 1 Map Design
+  m_text: 'Crystal Atoz - Platform Physics, Health Items, Traps, Level 1 Map Design,
+    Splash Screen, Mob Sounds
 
 
     Brady Blundell - UI, Main Menu, Pause Menu, Death Menu, Level 2 Map Design
