@@ -10127,21 +10127,21 @@ MonoBehaviour:
   Mobs:
   - name: Mob Attack
     clip: {fileID: 8300000, guid: 2cc46cabf96c30b41aee8de58bffee1c, type: 3}
-    pitch: 0
-    volume: 2
+    pitch: 1
+    volume: 1
     loop: 0
     source: {fileID: 0}
     spatialBlend: 0
   - name: Mob Die
     clip: {fileID: 8300000, guid: 8b92e318fbedb1645b76497c2b958fcc, type: 3}
-    pitch: 0
-    volume: 2
+    pitch: 1
+    volume: 1
     loop: 0
     source: {fileID: 0}
     spatialBlend: 0
   - name: Mob General
     clip: {fileID: 8300000, guid: 2cc46cabf96c30b41aee8de58bffee1c, type: 3}
-    pitch: 0
+    pitch: 1
     volume: 0.1
     loop: 0
     source: {fileID: 0}
