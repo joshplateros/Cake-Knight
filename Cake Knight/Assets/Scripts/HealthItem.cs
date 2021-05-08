@@ -13,6 +13,7 @@ public class HealthItem : MonoBehaviour
         int maxH = player.GetComponent<Player>().maxHealth;
         // Prevents getting more health than maxhealth
         if (curr < maxH) {
+            FindObjectOfType<AudioMgr>().Play("Nom");
             int difference = maxH - curr;
             
             // Ex current health is 95, add 5 hp to currentHealth 
