@@ -4,11 +4,17 @@ using UnityEngine;
 using UnityEngine.AI;
 
 public class BossBehavior : MonoBehaviour {
+    public static BossBehavior inst;
+    
+    // Enabled when boss is dead
+    public GameObject spotLight;
+    public GameObject boxes;
+
     // Health bar
     public Animator animator;
     public HealthBar healthbar;
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
 
     // Enemy damage
     public int enemyDamage = 20;
@@ -55,6 +61,9 @@ public class BossBehavior : MonoBehaviour {
         // animator.SetTrigger("Die");
         GetComponent<Collider>().enabled = false;
 
+        spotLight.SetActive(true);
+        boxes.SetActive(false);
+
         // Set script to off once enemey is dead
         this.enabled = false;
     }
@@ -65,6 +74,7 @@ public class BossBehavior : MonoBehaviour {
     private void Awake() {
         player = GameObject.Find("Player").transform;
         agent = GetComponent<NavMeshAgent>();
+        inst = this;
     }
 
     private void Update() {
@@ -124,11 +134,14 @@ public class BossBehavior : MonoBehaviour {
 
     void Attack1() {
         // Play damage sound here
+
+         FindObjectOfType<AudioMgr>().PlayMob("Thud 1");
          dealDamageToPlayer(0);
     }
 
     void Attack2() {
-        dealDamageToPlayer(10);
+         FindObjectOfType<AudioMgr>().PlayMob("Thud 2");
+         dealDamageToPlayer(10);
     }
 
 

@@ -51,6 +51,7 @@ public class Player : MonoBehaviour
 
         // Death noise
         FindObjectOfType<AudioMgr>().StopBGM("Level1 BG Music");
+        FindObjectOfType<AudioMgr>().StopBGM("Final Boss Music");
         FindObjectOfType<AudioMgr>().Play("Player Death");
         FindObjectOfType<AudioMgr>().PlayBGM("Death Music");
 
