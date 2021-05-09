@@ -53,7 +53,7 @@ public class CakeActivate : MonoBehaviour
 
     public IEnumerator PlayCredits() {
 
-        yield return new WaitForSeconds(6f);
+        yield return new WaitForSeconds(1f);
         Credits.SetActive(true);
     }
 }

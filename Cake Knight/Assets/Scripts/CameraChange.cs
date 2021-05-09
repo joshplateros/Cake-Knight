@@ -10,7 +10,7 @@ public class CameraChange : MonoBehaviour
         CameraFollowNew.inst.offset.y = 5.45f;
         if (onPlay == false) {
             FindObjectOfType<AudioMgr>().PlayMob("Boss Growl");
-            FindObjectOfType<AudioMgr>().StopBGM("Level1 BG Music");
+            FindObjectOfType<AudioMgr>().StopBGM("Level3 BG Music");
             FindObjectOfType<AudioMgr>().PlayBGM("Final Boss Music");
             onPlay = true;
         }
