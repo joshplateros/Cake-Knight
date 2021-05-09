@@ -648,7 +648,7 @@ MonoBehaviour:
   boxes: {fileID: 1943451618}
   animator: {fileID: 674148061}
   healthbar: {fileID: 1948776896}
-  maxHealth: 200
+  maxHealth: 300
   currentHealth: 0
   enemyDamage: 20
   enemyAttackPoint: {fileID: 1993773777}
