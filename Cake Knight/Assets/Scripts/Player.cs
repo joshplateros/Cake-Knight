@@ -38,10 +38,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            TakeDmg(20);
-        }
+
         if (currentHealth <= 0) {
             Die();
         }
