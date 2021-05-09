@@ -32,9 +32,9 @@ public class CreditsFade: MonoBehaviour
     public IEnumerator FadeTextToZeroAlpha(float t, RawImage i) {
 
         // ADJUST TIME HERE BASED ON LEGNTH OF CREDITS
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(40f);
 
-        i.color = new Color(i.color.r, i.color.g, i.color.b, 1);
+        i.color = new Color(i.color.r, i.color.g, i.color.b, 0.4f);
         while (i.color.a > 0.0f) {
             i.color = new Color(i.color.r, i.color.g, i.color.b, i.color.a - (Time.deltaTime / t));
             yield return null;
