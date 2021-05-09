@@ -5,11 +5,12 @@ using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
+
     // Health bar
     public Animator animator;
     public HealthBar healthbar;
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
 
     // Enemy damage
     public int enemyDamage = 20;
@@ -71,6 +72,9 @@ public class EnemyBehavior : MonoBehaviour
 
         // Death noise
         FindObjectOfType<AudioMgr>().Play("Mob Death");
+        
+        // Increase death count for level
+        LevelControl.inst.deadEnemies += 1;
 
         // Set script to off once enemey is dead
         this.enabled = false;
