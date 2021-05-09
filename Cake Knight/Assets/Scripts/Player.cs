@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityStandardAssets.Characters.ThirdPerson;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour
 {
@@ -24,7 +25,14 @@ public class Player : MonoBehaviour
     {
         currentHealth = maxHealth;
         healthbar.SetMaxHealth(currentHealth);
-        FindObjectOfType<AudioMgr>().PlayBGM("Level1 BG Music");
+        if (SceneManager.GetActiveScene().name == "FinalLevel") {
+            FindObjectOfType<AudioMgr>().PlayBGM("Level3 BG Music");
+        } else if (SceneManager.GetActiveScene().name == "Level2") {
+            // Play level 2 BGM here
+            FindObjectOfType<AudioMgr>().PlayBGM("Level1 BG Music");
+        } else {
+            FindObjectOfType<AudioMgr>().PlayBGM("Level1 BG Music");
+        }
     }
 
     // Update is called once per frame
