@@ -18587,6 +18587,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
+<<<<<<< Updated upstream:Cake Knight/Assets/Scenes/DemoTest.unity
   m_FontData:
     m_Font: {fileID: 12800000, guid: 4beb055f07aaff244873dec698d0363e, type: 3}
     m_FontSize: 45
@@ -18602,6 +18603,18 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: RESTART
 --- !u!222 &1665441714
+=======
+  m_Sprite: {fileID: 21300000, guid: 2a1400271a8b4f444a6eb60d38c50973, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+--- !u!222 &1646374797
+>>>>>>> Stashed changes:Cake Knight/Assets/Scenes/Level1.unity
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
