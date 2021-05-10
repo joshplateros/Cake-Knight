@@ -31437,9 +31437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90725ee16464b9b4d81fecc0d2fbbe02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  boxes: {fileID: 0}
-  spotLight: {fileID: 0}
-  numEnemies: 0
+  boxes: {fileID: 1943451618}
+  spotLight: {fileID: 2112130987}
+  numEnemies: 1
   doorOpen: 0
   deadEnemies: 0
 --- !u!65 &1665585105
