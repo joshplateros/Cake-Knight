@@ -5,11 +5,12 @@ using UnityEngine.AI;
 
 public class EnemyBehavior : MonoBehaviour
 {
+
     // Health bar
     public Animator animator;
     public HealthBar healthbar;
     public int maxHealth = 100;
-    int currentHealth;
+    public int currentHealth;
 
     // Enemy damage
     public int enemyDamage = 20;
@@ -40,6 +41,8 @@ public class EnemyBehavior : MonoBehaviour
     }
 
     public void TakeDamage(int damage) {
+
+        StartCoroutine(ColorDamage());
         currentHealth -= damage;
 
         animator.SetTrigger("Take Damage");
@@ -50,10 +53,28 @@ public class EnemyBehavior : MonoBehaviour
         }
     }
 
+    IEnumerator ColorDamage() {
+
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = new Color(0.70f, 0, 0, 1);
+
+        yield return new WaitForSeconds(0.5f);
+
+        gameObject.GetComponentInChildren<SkinnedMeshRenderer>().material.color = new Color(1f, 1f, 1f, 1);
+
+
+    }
+
+
     void Die() {
         animator.SetBool("isDead", true);
         // animator.SetTrigger("Die");
         GetComponent<Collider>().enabled = false;
+
+        // Death noise
+        FindObjectOfType<AudioMgr>().Play("Mob Death");
+        
+        // Increase death count for level
+        LevelControl.inst.deadEnemies += 1;
 
         // Set script to off once enemey is dead
         this.enabled = false;
@@ -137,6 +158,8 @@ public class EnemyBehavior : MonoBehaviour
         Collider[] thePlayer = Physics.OverlapSphere(enemyAttackPoint.position, attackRange, whatIsPlayer);
         
         animator.SetTrigger("Attack 01");
+        // Attack Noise 
+        FindObjectOfType<AudioMgr>().PlayMob("Mob Attack");
         // Damage player (Didn't need to be a list but using previous tutorial only used list (can't just use player object)))
         foreach(Collider player in thePlayer) {
             player.GetComponent<Player>().TakeDmg(enemyDamage);

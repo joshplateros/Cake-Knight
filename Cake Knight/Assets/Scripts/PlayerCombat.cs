@@ -65,24 +65,26 @@ public class PlayerCombat : MonoBehaviour
     }
 
     void Attack() {
- 
+        
+        // Make sure attack 3 is finished 
+        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack 3") == false) {
+            if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
+                if (CheckIfEnemies() == false) {
+                    FindObjectOfType<AudioMgr>().Play("SwordAir2");
+                }
+                animator.SetTrigger("Attack 2");
+            } else if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack 2")) {
 
-        if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack")) {
-            if (CheckIfEnemies() == false) {
-                FindObjectOfType<AudioMgr>().Play("SwordAir2");
+                BattleCryRand();
+                FindObjectOfType<AudioMgr>().Play("SwordCrash");
+
+                animator.SetTrigger("Attack 3");
+            } else {
+                if (CheckIfEnemies() == false) {
+                    FindObjectOfType<AudioMgr>().Play("SwordAir");
+                }
+                animator.SetTrigger("Attack");
             }
-           animator.SetTrigger("Attack 2");
-        } else if (GetComponent<Animator>().GetCurrentAnimatorStateInfo(0).IsName("Attack 2")) {
-
-            BattleCryRand();
-            FindObjectOfType<AudioMgr>().Play("SwordCrash");
-
-           animator.SetTrigger("Attack 3");
-        } else {
-            if (CheckIfEnemies() == false) {
-                FindObjectOfType<AudioMgr>().Play("SwordAir");
-            }
-            animator.SetTrigger("Attack");
         }
     }
 
